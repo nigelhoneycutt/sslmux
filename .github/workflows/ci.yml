@@ -19,6 +19,12 @@ jobs:
       with:
         go-version: 1.18
 
+    - name: Setup files
+      run: |
+        sudo apt update && sudo apt install -y musl-*
+        go mod init github.com/nigelhoneycutt/sslmux
+        go mod tidy
+        
     - name: goreleaser
       if: success()
       uses: docker://goreleaser/goreleaser:latest
