@@ -2,9 +2,7 @@ name: Go
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: write
@@ -37,7 +35,7 @@ jobs:
         # either 'goreleaser' (default) or 'goreleaser-pro'
         distribution: goreleaser
         version: latest
-        args: release --rm-dist --config .github/goreleaser.yml
+        args: release --config .github/goreleaser.yml
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     
