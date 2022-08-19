@@ -1,8 +1,8 @@
 builds:
   - env:
-      - CGO_ENABLED=0 CC=musl-gcc
+      - CGO_ENABLED=0
     ldflags:
-      - -linkmode external -extldflags -static
+      - -s -w
     flags:
       - -trimpath
     goos:

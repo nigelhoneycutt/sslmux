@@ -27,11 +27,4 @@ jobs:
         sudo apt update && sudo apt install -y goreleaser
         go mod init github.com/nigelhoneycutt/sslmux
         go mod tidy
-        gorelease release --config .github/goreleaser.yml
-
-    - name: goreleaser
-      if: success()
-      uses: docker://goreleaser/goreleaser:latest
-
-      with:
-        args: release --config .github/goreleaser.yml
+        goreleaser release --config .github/goreleaser.yml
